@@ -1,17 +1,22 @@
 /* hoja de estilos */
 
+/* hoja de estilos */
+
 :root{
     --fuenteEncabezado: "PT Sans", sans-serif;
     --fuenteParrafos: "Open Sans", sans-serif;
     --primario: #784D3C;
     --blanco: #FFF;
-    --negro: #fff;
+    --negro: #000;
+    --gris: #e1e1e1;
 }
+
 
 html{
     box-sizing: border-box;
-    font-size: 62.5%;
+    font-size: 62.5%; /* 1rem = 10px */
 }
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -51,6 +56,10 @@ h4{
     font-size: 2.8rem;
 }
 
+img{
+    max-width: 100%;
+}
+
 /* estilos utilitarios para reutilizar */
 .no-margin{
     margin: 0;
@@ -58,10 +67,11 @@ h4{
 .no-padding{
     padding: 0;
 }
+
 .centrar-texto{
     text-align: center;
-
 }
+
 /* estilo del header */
 .header{
     background-image: url(../img/grupo.png);
@@ -73,27 +83,150 @@ h4{
 
 .header__texto{
     text-align: center;
-    color: var(--negro);
+    color: var(--blanco);
     margin-top:5rem;
 }
+
+.logo{
+    color: var(--blanco);
+}
+
+.logo__nombre{
+    font-weight: 400;
+}
+
+.logo__bold{
+    font-weight: 700;
+}
+
+.navegacion__enlace{
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
+  
+}
+
+/* estilos para el blog */
+.entrada{
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+.boton{
+    display: block;
+    font-family: var(--fuenteEncabezado);
+    color: var(--blanco);
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.boton--primario{
+    background-color: var(--negro);
+
+}
+
+.boton--secundario{
+    background-color: var(--primario);
+
+}
+
+/* estilos para el sidebar */
+.cursos{
+    list-style: none;
+}
+
+.widget-curso{
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type{
+    border:none;
+    margin-bottom: 0;
+}
+
+.widget-curso__label{
+    font-family: var(--fuenteEncabezado);
+    font-weight: bold;
+}
+
+.widget-curso__info{
+    font-weight: normal;
+}
+
+.widget-curso__label, .widget-curso__info{
+    font-size: 2rem;
+}
+
+/* estilos para el pie de pagina */
+.footer{
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+
+/* estilos pagina contacto */
+.contacto-bg{
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.formulario{
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    padding: 5rem;
+    width: 90%;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo__label{
+    padding-right: 2rem;
+
+}
+.campo__field{
+
+}
+
+
 @media (min-width: 768px){
     .barra{
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-
-    .logo{
-        color: var(--blanco);
+    .navegacion{
+        display: flex;
+        gap: 2rem;
     }
 
-    .logo__nombre{
-        font-weight: 400;
+    .header__texto{
+        margin-top:10rem;
+    }
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+
+    .boton {
+        display: inline-block;
 
     }
 
-    .logo__bold{
-        font-weight: 700;
-
-    }
 }
